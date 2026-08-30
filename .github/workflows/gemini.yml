@@ -17,11 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - - uses: google-github-actions/run-gemini-cli@main   
+      - uses: google-github-actions/run-gemini-cli@main
         env:
-          GEMINI_CLI_TRUST_WORKSPACE: 'true' # <--- Dòng này là QUAN TRỌNG nhất
+          GEMINI_CLI_TRUST_WORKSPACE: 'true'
         with:
           api-key: ${{ secrets.GEMINI_API_KEY }}
           mode: agent
-          # Bạn có thể thêm dòng này để bật log debug nhằm kiểm tra lỗi:
-          # gemini_debug: true
